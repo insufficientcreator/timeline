@@ -251,6 +251,7 @@ h3 {
     line-height: 1.3;
     color: #333;
     white-space: pre-wrap;
+    text-align: justify;
 }
 
 .relation-center {
@@ -301,6 +302,7 @@ h3 {
     line-height: 1.4;
     color: #dddddd;
     white-space: pre-wrap;
+    text-align: justify;
 }
 
 .circle-crops-row {
@@ -359,7 +361,7 @@ h3 {
     align-items: center;
     justify-content: center;
     background-size: cover;
-    background-position: center 50%; 
+    background-position: 50% 50%;
 }
 
 .bottom-right-zone {
@@ -402,6 +404,14 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.story-desc-text {
+    font-size: 0.75rem;
+    color: #444;
+    margin-bottom: 8px;
+    white-space: pre-wrap;
+    text-align: justify;
 }
 
 .chat-bubble {

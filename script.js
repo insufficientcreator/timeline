@@ -72,8 +72,16 @@ inputChatBColor.addEventListener('input', (e) => {
     document.querySelectorAll('.bubble-b').forEach(b => b.style.color = e.target.value);
 });
 
+
 document.getElementById('in-pair-name').addEventListener('input', (e) => {
     document.getElementById('out-pair-name').textContent = e.target.value;
+});
+
+document.getElementById('in-ch1-badge').addEventListener('input', (e) => {
+    document.getElementById('out-ch1-badge').textContent = e.target.value || "CHARACTER A";
+});
+document.getElementById('in-ch2-badge').addEventListener('input', (e) => {
+    document.getElementById('out-ch2-badge').textContent = e.target.value || "CHARACTER B";
 });
 
 document.getElementById('in-ch1-name').addEventListener('input', (e) => document.getElementById('out-ch1-name').textContent = e.target.value);
