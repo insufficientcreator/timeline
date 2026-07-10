@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELINE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="input-section">
+            <h2>⚙️ 데이터 입력창</h2>
+            
+            <h3>[디자인 설정]</h3>
+            <div class="input-group">
+                <label>글꼴(폰트) 선택</label>
+                <select id="input-font">
+                    <option value="'Noto Sans KR', sans-serif">Noto Sans</option>
+                    <option value="'Noto Serif KR', serif">Noto Serif</option>
+                    <option value="'Gowun Dodum', sans-serif">고운돋움</option>
+                    <option value="'Gowun Batang', serif">고운바탕</option>
+                </select>
+            </div>
+
+            <h3>[상단 타이틀 & 가로 배너]</h3>
+            <div class="input-group">
+                <label>페어명 (메인 타이틀)</label>
+                <input type="text" id="in-pair-name" placeholder="예: 페어명 (PAIR NAME)" value="">
+            </div>
+            <div class="input-group">
+                <label>상단 긴 가로 배너 이미지</label>
+                <input type="file" id="in-top-banner" accept="image/*">
+            </div>
+
+            <h3>[캐릭터 1 (좌)]</h3>
+            <div class="input-group"><label>이름</label><input type="text" id="in-ch1-name" placeholder="이름 입력" value=""></div>
+            <div class="input-group"><label>나이</label><input type="text" id="in-ch1-age" placeholder="나이" value=""></div>
+            <div class="input-group"><label>성별</label><input type="text" id="in-ch1-gender" placeholder="성별" value=""></div>
+            <div class="input-group"><label>태그/설명</label><textarea id="in-ch1-desc" rows="3" placeholder="#해시태그 입력&#10;설명을 적어주세요."></textarea></div>
+            <div class="input-group"><label>프로필 이미지</label><input type="file" id="in-ch1-img" accept="image/*"></div>
+
+            <h3>[캐릭터 2 (우)]</h3>
+            <div class="input-group"><label>이름</label><input type="text" id="in-ch2-name" placeholder="이름 입력" value=""></div>
+            <div class="input-group"><label>나이</label><input type="text" id="in-ch2-age" placeholder="나이" value=""></div>
+            <div class="input-group"><label>성별</label><input type="text" id="in-ch2-gender" placeholder="성별" value=""></div>
+            <div class="input-group"><label>태그/설명</label><textarea id="in-ch2-desc" rows="3" placeholder="#해시태그 입력&#10;설명을 적어주세요."></textarea></div>
+            <div class="input-group"><label>프로필 이미지</label><input type="file" id="in-ch2-img" accept="image/*"></div>
+
+            <h3>[중앙 관계성 & 동그란 원형 이미지]</h3>
+            <div class="input-group"><label>상단 화살표 텍스트</label><input type="text" id="in-rel-top" placeholder="A가 B에게 느끼는 감정" value=""></div>
+            <div class="input-group"><label>하단 화살표 텍스트</label><input type="text" id="in-rel-bot" placeholder="B가 A에게 느끼는 감정" value=""></div>
+            <div class="input-group"><label>좌측 동그란 원 이미지 (캐릭터 1 관련)</label><input type="file" id="in-circle1-img" accept="image/*"></div>
+            <div class="input-group"><label>우측 동그란 원 이미지 (캐릭터 2 관련)</label><input type="file" id="in-circle2-img" accept="image/*"></div>
+
+            <h3>[좌측 하단 메인 박스 & 대형 이미지]</h3>
+            <div class="input-group"><label>박스 제목</label><input type="text" id="in-main-title" placeholder="세계관 키워드" value=""></div>
+            <div class="input-group"><label>박스 본문</label><textarea id="in-main-content" rows="4" placeholder="세계관 요약 및 배경 등 자유롭게 적어주세요."></textarea></div>
+            <div class="input-group"><label>맨 밑 큰 일러스트 이미지</label><input type="file" id="in-bottom-large-img" accept="image/*"></div>
+
+            <h3>[우측 서사 구역]</h3>
+            <div class="input-group"><label>서사1 제목</label><input type="text" id="in-story1-title" placeholder="첫 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사1 내용</label><textarea id="in-story1-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+            
+            <div class="input-group"><label>서사2 제목</label><input type="text" id="in-story2-title" placeholder="두 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사2 내용</label><textarea id="in-story2-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+
+            <div class="input-group"><label>서사3 제목</label><input type="text" id="in-story3-title" placeholder="세 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사3 내용</label><textarea id="in-story3-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+
+            <div class="input-group"><label>서사4 제목</label><input type="text" id="in-story4-title" placeholder="네 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사4 내용</label><textarea id="in-story4-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+
+            <button id="btn-save">📸 이미지 저장하기</button>
+        </div>
+
+        <div class="preview-section">
+            <h2>👁️ 실시간 미리보기</h2>
+            
+            <div id="capture-area" class="main-layout">
+                
+                <div class="card-top-bar">
+                    <div class="top-dots">
+                        <span class="dot color1"></span>
+                        <span class="dot color2"></span>
+                        <span class="dot color3"></span>
+                    </div>
+                    <div id="out-pair-name" class="pair-title">PAIR TITLE</div>
+                    <div class="top-spacer"></div>
+                </div>
+
+                <div class="top-banner-slot" id="out-top-banner">
+                    <span class="img-guide">상단 배너 이미지를 첨부하세요</span>
+                </div>
+
+                <div class="profile-relation-row">
+                    <!-- 캐릭터 1 (좌) -->
+                    <div class="char-card">
+                        <div class="char-header-badge">CHARACTER 01</div>
+                        <div class="char-main-box">
+                            <div class="char-img-slot" id="out-ch1-img-slot"></div>
+                            <div class="char-info-grid">
+                                <div class="info-top-row">
+                                    <span class="info-name" id="out-ch1-name">이름</span>
+                                    <span class="info-badge" id="out-ch1-age">나이</span>
+                                    <span class="info-badge" id="out-ch1-gender">성별</span>
+                                </div>
+                                <p class="info-desc" id="out-ch1-desc">내용을 입력해 주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relation-center">
+                        <div class="rel-text" id="out-rel-top">관계성 1</div>
+                        <div class="arrow-box">
+                            <div class="arrow-line-top">◀━━━━━</div>
+                            <div class="arrow-line-bottom">━━━━━▶</div>
+                        </div>
+                        <div class="rel-text" id="out-rel-bot">관계성 2</div>
+                    </div>
+
+                    <div class="char-card">
+                        <div class="char-header-badge-right">CHARACTER 02</div>
+                        <div class="char-main-box">
+                            <div class="char-img-slot" id="out-ch2-img-slot"></div>
+                            <div class="char-info-grid">
+                                <div class="info-top-row">
+                                    <span class="info-name" id="out-ch2-name">이름</span>
+                                    <span class="info-badge" id="out-ch2-age">나이</span>
+                                    <span class="info-badge" id="out-ch2-gender">성별</span>
+                                </div>
+                                <p class="info-desc" id="out-ch2-desc">내용을 입력해 주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-content-grid">
+                    <div class="bottom-left-zone">
+                        <div class="noir-text-box">
+                            <h4 id="out-main-title">TITLE</h4>
+                            <p id="out-main-content">세계관 설정이나 캐릭터들의 메인 스토리를 이곳에 채워 넣으세요.</p>
+                        </div>
+                        
+                        <div class="circle-crops-row">
+                            <div class="circle-crop" id="out-circle1-img"></div>
+                            <div class="circle-arrows">⇆</div>
+                            <div class="circle-crop" id="out-circle2-img"></div>
+                        </div>
+
+                        <div class="bottom-large-img-slot" id="out-bottom-large-img">
+                            <span class="img-guide">하단 대형 일러스트 이미지를 첨부하세요</span>
+                        </div>
+                    </div>
+
+                    <div class="bottom-right-zone">
+                        <div class="story-item">
+                            <div class="story-header" id="out-story1-title">서사 제목 1</div>
+                            <div class="story-body"><p id="out-story1-content">서사 세부 내용</p><span class="story-num">1</span></div>
+                        </div>
+                        <div class="story-item">
+                            <div class="story-header" id="out-story2-title">서사 제목 2</div>
+                            <div class="story-body"><p id="out-story2-content">서사 세부 내용</p><span class="story-num">2</span></div>
+                        </div>
+                        <div class="story-item">
+                            <div class="story-header" id="out-story3-title">서사 제목 3</div>
+                            <div class="story-body"><p id="out-story3-content">서사 세부 내용</p><span class="story-num">3</span></div>
+                        </div>
+                        <div class="story-item">
+                            <div class="story-header" id="out-story4-title">서사 제목 4</div>
+                            <div class="story-body"><p id="out-story4-content">서사 세부 내용</p><span class="story-num">4</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
