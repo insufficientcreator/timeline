@@ -40,6 +40,26 @@ inputStoryTitleColor.addEventListener('input', (e) => {
     wraps.forEach(wrap => wrap.style.color = e.target.value);
 });
 
+const inputBadgeABg = document.getElementById('input-badge-a-bg');
+const inputBadgeBBg = document.getElementById('input-badge-b-bg');
+const inputBadgeColor = document.getElementById('input-badge-color');
+
+const outCh1Badge = document.getElementById('out-ch1-badge');
+const outCh2Badge = document.getElementById('out-ch2-badge');
+
+inputBadgeABg.addEventListener('input', (e) => {
+    outCh1Badge.style.backgroundColor = e.target.value;
+});
+
+inputBadgeBBg.addEventListener('input', (e) => {
+    outCh2Badge.style.backgroundColor = e.target.value;
+});
+
+inputBadgeColor.addEventListener('input', (e) => {
+    outCh1Badge.style.color = e.target.value;
+    outCh2Badge.style.color = e.target.value;
+});
+
 
 document.getElementById('in-pair-name').addEventListener('input', (e) => {
     document.getElementById('out-pair-name').textContent = e.target.value;
@@ -61,7 +81,6 @@ document.getElementById('in-ch2-desc').addEventListener('input', (e) => {
 
 document.getElementById('in-rel-top').addEventListener('input', (e) => document.getElementById('out-rel-top').textContent = e.target.value);
 document.getElementById('in-rel-bot').addEventListener('input', (e) => document.getElementById('out-rel-bot').textContent = e.target.value);
-
 document.getElementById('in-circle-rel-top').addEventListener('input', (e) => document.getElementById('out-circle-rel-top').textContent = e.target.value);
 document.getElementById('in-circle-rel-bot').addEventListener('input', (e) => document.getElementById('out-circle-rel-bot').textContent = e.target.value);
 
@@ -109,10 +128,8 @@ function setupImagePreview(inputId, slotId, clearText) {
 
 const inputBannerY = document.getElementById('input-banner-y');
 const outTopBanner = document.getElementById('out-top-banner');
-
 inputBannerY.addEventListener('input', (e) => {
-    const yValue = e.target.value;
-    outTopBanner.style.backgroundPosition = `center ${yValue}%`;
+    outTopBanner.style.backgroundPosition = `center ${e.target.value}%`;
 });
 
 document.getElementById('btn-save').addEventListener('click', () => {

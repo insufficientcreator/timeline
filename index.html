@@ -58,6 +58,21 @@
                 </div>
             </div>
 
+            <div class="color-picker-grid" style="margin-top: 10px;">
+                <div class="input-group">
+                    <label>A 테마색</label>
+                    <input type="color" id="input-badge-a-bg" value="#000000">
+                </div>
+                <div class="input-group">
+                    <label>B 테마색</label>
+                    <input type="color" id="input-badge-b-bg" value="#000000">
+                </div>
+                <div class="input-group">
+                    <label>배지 글자색</label>
+                    <input type="color" id="input-badge-color" value="#ffffff">
+                </div>
+            </div>
+
             <div class="input-group" style="margin-top: 15px;">
                 <label>글꼴(폰트)</label>
                 <select id="input-font">
@@ -82,14 +97,14 @@
                 <input type="range" id="input-banner-y" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
             </div>
 
-            <h3>[캐릭터 A]</h3>
+            <h3>[A]</h3>
             <div class="input-group"><label>이름</label><input type="text" id="in-ch1-name" placeholder="이름 입력" value=""></div>
             <div class="input-group"><label>나이</label><input type="text" id="in-ch1-age" placeholder="나이" value=""></div>
             <div class="input-group"><label>성별</label><input type="text" id="in-ch1-gender" placeholder="성별" value=""></div>
             <div class="input-group"><label>태그/설명</label><textarea id="in-ch1-desc" rows="3" placeholder="#해시태그로 키워드 구분&#10;설명을 적어주세요."></textarea></div>
             <div class="input-group"><label>프로필 이미지</label><input type="file" id="in-ch1-img" accept="image/*"></div>
 
-            <h3>[캐릭터 B]</h3>
+            <h3>[B]</h3>
             <div class="input-group"><label>이름</label><input type="text" id="in-ch2-name" placeholder="이름 입력" value=""></div>
             <div class="input-group"><label>나이</label><input type="text" id="in-ch2-age" placeholder="나이" value=""></div>
             <div class="input-group"><label>성별</label><input type="text" id="in-ch2-gender" placeholder="성별" value=""></div>
@@ -148,7 +163,7 @@
 
                 <div class="profile-relation-row">
                     <div class="char-card">
-                        <div class="char-header-badge">CHARACTER A</div>
+                        <div class="char-header-badge class-char-badge" id="out-ch1-badge">CHARACTER A</div>
                         <div class="char-main-box">
                             <div class="char-img-slot" id="out-ch1-img-slot"></div>
                             <div class="char-info-grid">
@@ -172,7 +187,7 @@
                     </div>
 
                     <div class="char-card">
-                        <div class="char-header-badge-right">CHARACTER B</div>
+                        <div class="char-header-badge-right class-char-badge" id="out-ch2-badge">CHARACTER B</div>
                         <div class="char-main-box">
                             <div class="char-img-slot" id="out-ch2-img-slot"></div>
                             <div class="char-info-grid">
