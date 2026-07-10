@@ -100,7 +100,7 @@ document.getElementById('btn-save').addEventListener('click', () => {
     const area = document.getElementById('capture-area');
     html2canvas(area, { scale: 2 }).then(canvas => {
         const link = document.createElement('a');
-        link.download = 'relationship_timeline_card.png';
+        link.download = 'pair_timeline.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
     });
