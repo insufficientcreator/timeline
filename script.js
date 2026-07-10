@@ -9,7 +9,6 @@ const btnSave = document.getElementById('btn-save');
 
 inputDot1.addEventListener('input', (e) => outDot1.style.backgroundColor = e.target.value);
 inputDot2.addEventListener('input', (e) => outDot2.style.backgroundColor = e.target.value);
-
 inputDot3.addEventListener('input', (e) => {
     const nextColor = e.target.value;
     outDot3.style.backgroundColor = nextColor;
@@ -94,6 +93,14 @@ function setupImagePreview(inputId, slotId, clearText) {
         }
     });
 }
+
+const inputBannerY = document.getElementById('input-banner-y');
+const outTopBanner = document.getElementById('out-top-banner');
+
+inputBannerY.addEventListener('input', (e) => {
+    const yValue = e.target.value;
+    outTopBanner.style.backgroundPosition = `center ${yValue}%`;
+});
 
 document.getElementById('btn-save').addEventListener('click', () => {
     const area = document.getElementById('capture-area');
