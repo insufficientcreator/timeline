@@ -91,7 +91,6 @@ h3 {
     border-radius: 4px;
 }
 
-
 .main-layout {
     width: 800px;
     background-color: #ffffff;
@@ -211,15 +210,16 @@ h3 {
 
 .info-top-row {
     display: flex;
-    gap: 5px;
+    gap: 6px;
     align-items: center;
 }
 
 .info-name {
-    font-weight: bold;
-    font-size: 0.95rem;
-    border: 1px solid #ff4a4a;
-    padding: 1px 6px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: none;
+    padding: 0;
+    color: #000;
 }
 
 .info-badge {
@@ -276,7 +276,7 @@ h3 {
     font-weight: bold;
     border-bottom: 1px solid #333;
     padding-bottom: 3px;
-    color: #ff4a4a; 
+    color: #ff4a4a;
 }
 
 #out-main-content {

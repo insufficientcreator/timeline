@@ -7,15 +7,14 @@ const outDot2 = document.getElementById('out-dot2');
 const outDot3 = document.getElementById('out-dot3');
 const btnSave = document.getElementById('btn-save');
 
+
 inputDot1.addEventListener('input', (e) => outDot1.style.backgroundColor = e.target.value);
 inputDot2.addEventListener('input', (e) => outDot2.style.backgroundColor = e.target.value);
+
 inputDot3.addEventListener('input', (e) => {
     const nextColor = e.target.value;
     outDot3.style.backgroundColor = nextColor;
     btnSave.style.backgroundColor = nextColor;
-    
-    const chNameBorders = document.querySelectorAll('.info-name');
-    chNameBorders.forEach(el => el.style.borderColor = nextColor);
 });
 
 const inputBoxBg = document.getElementById('input-box-bg');
