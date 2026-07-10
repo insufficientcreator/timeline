@@ -47,6 +47,17 @@
                 </div>
             </div>
 
+            <div class="color-picker-grid" style="margin-top: 10px;">
+                <div class="input-group" style="grid-column: span 1.5;">
+                    <label>서사 제목 배경색</label>
+                    <input type="color" id="input-story-title-bg" value="#000000">
+                </div>
+                <div class="input-group" style="grid-column: span 1.5;">
+                    <label>서사 제목 글자색</label>
+                    <input type="color" id="input-story-title-color" value="#ffffff">
+                </div>
+            </div>
+
             <div class="input-group" style="margin-top: 15px;">
                 <label>글꼴(폰트)</label>
                 <select id="input-font">
@@ -89,18 +100,18 @@
             <div class="input-group"><label>상단 화살표 텍스트</label><input type="text" id="in-rel-top" placeholder="A가 B에게 느끼는 감정" value=""></div>
             <div class="input-group"><label>하단 화살표 텍스트</label><input type="text" id="in-rel-bot" placeholder="B가 A에게 느끼는 감정" value=""></div>
 
-            <h3>[하단 원형 크롭 & 호칭 관계]</h3>
+            <h3>[상호 호칭]</h3>
             <div class="input-group"><label>좌측 동그란 원 이미지</label><input type="file" id="in-circle1-img" accept="image/*"></div>
             <div class="input-group"><label>우측 동그란 원 이미지</label><input type="file" id="in-circle2-img" accept="image/*"></div>
             <div class="input-group"><label>원형 상단 호칭 (A → B)</label><input type="text" id="in-circle-rel-top" placeholder="예: 한영아 / 아줌마는" value=""></div>
             <div class="input-group"><label>원형 하단 호칭 (B → A)</label><input type="text" id="in-circle-rel-bot" placeholder="예: 손님 / 저는" value=""></div>
 
-            <h3>[좌측 하단 메인 박스 & 대형 이미지]</h3>
+            <h3>[세계관]</h3>
             <div class="input-group"><label>박스 제목</label><input type="text" id="in-main-title" placeholder="세계관 키워드" value=""></div>
             <div class="input-group"><label>박스 본문</label><textarea id="in-main-content" rows="4" placeholder="세계관 요약 및 배경 등"></textarea></div>
             <div class="input-group"><label>페어 이미지</label><input type="file" id="in-bottom-large-img" accept="image/*"></div>
 
-            <h3>[우측 서사 구역]</h3>
+            <h3>[서사 타임라인]</h3>
             <div class="input-group"><label>서사1 제목</label><input type="text" id="in-story1-title" placeholder="첫 번째 서사 제목" value=""></div>
             <div class="input-group"><label>서사1 내용</label><textarea id="in-story1-content" rows="2" placeholder="상세 내용"></textarea></div>
             
@@ -205,20 +216,32 @@
 
                     <div class="bottom-right-zone">
                         <div class="story-item">
-                            <div class="story-header" id="out-story1-title">서사 제목 1</div>
-                            <div class="story-body"><p id="out-story1-content">서사 세부 내용</p><span class="story-num">1</span></div>
+                            <div class="story-header-wrap">
+                                <div class="story-header class-story-header" id="out-story1-title">서사 제목 1</div>
+                                <span class="story-num-circle">1</span>
+                            </div>
+                            <div class="story-body"><p id="out-story1-content">서사 세부 내용</p></div>
                         </div>
                         <div class="story-item">
-                            <div class="story-header" id="out-story2-title">서사 제목 2</div>
-                            <div class="story-body"><p id="out-story2-content">서사 세부 내용</p><span class="story-num">2</span></div>
+                            <div class="story-header-wrap">
+                                <div class="story-header class-story-header" id="out-story2-title">서사 제목 2</div>
+                                <span class="story-num-circle">2</span>
+                            </div>
+                            <div class="story-body"><p id="out-story2-content">서사 세부 내용</p></div>
                         </div>
                         <div class="story-item">
-                            <div class="story-header" id="out-story3-title">서사 제목 3</div>
-                            <div class="story-body"><p id="out-story3-content">서사 세부 내용</p><span class="story-num">3</span></div>
+                            <div class="story-header-wrap">
+                                <div class="story-header class-story-header" id="out-story3-title">서사 제목 3</div>
+                                <span class="story-num-circle">3</span>
+                            </div>
+                            <div class="story-body"><p id="out-story3-content">서사 세부 내용</p></div>
                         </div>
                         <div class="story-item">
-                            <div class="story-header" id="out-story4-title">서사 제목 4</div>
-                            <div class="story-body"><p id="out-story4-content">서사 세부 내용</p><span class="story-num">4</span></div>
+                            <div class="story-header-wrap">
+                                <div class="story-header class-story-header" id="out-story4-title">서사 제목 4</div>
+                                <span class="story-num-circle">4</span>
+                            </div>
+                            <div class="story-body"><p id="out-story4-content">서사 세부 내용</p></div>
                         </div>
                     </div>
                 </div>

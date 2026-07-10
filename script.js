@@ -27,6 +27,19 @@ inputBoxBg.addEventListener('input', (e) => outMainBox.style.backgroundColor = e
 inputBoxTitleColor.addEventListener('input', (e) => outMainTitle.style.color = e.target.value);
 inputBoxTextColor.addEventListener('input', (e) => outMainContent.style.color = e.target.value);
 
+const inputStoryTitleBg = document.getElementById('input-story-title-bg');
+const inputStoryTitleColor = document.getElementById('input-story-title-color');
+
+inputStoryTitleBg.addEventListener('input', (e) => {
+    const wraps = document.querySelectorAll('.story-header-wrap');
+    wraps.forEach(wrap => wrap.style.backgroundColor = e.target.value);
+});
+
+inputStoryTitleColor.addEventListener('input', (e) => {
+    const wraps = document.querySelectorAll('.story-header-wrap');
+    wraps.forEach(wrap => wrap.style.color = e.target.value);
+});
+
 
 document.getElementById('in-pair-name').addEventListener('input', (e) => {
     document.getElementById('out-pair-name').textContent = e.target.value;
