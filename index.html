@@ -14,11 +14,41 @@
 
     <div class="container">
         <div class="input-section">
-            <h2>⚙️ 데이터 입력창</h2>
+            <h2>PAIR DATA</h2>
             
-            <h3>[디자인 설정]</h3>
-            <div class="input-group">
-                <label>글꼴(폰트) 선택</label>
+            <h3>[디자인]</h3>
+            <div class="color-picker-grid">
+                <div class="input-group">
+                    <label>페어색 1</label>
+                    <input type="color" id="input-dot1-color" value="#333333">
+                </div>
+                <div class="input-group">
+                    <label>페어색 2</label>
+                    <input type="color" id="input-dot2-color" value="#aa8888">
+                </div>
+                <div class="input-group">
+                    <label>페어색 3</label>
+                    <input type="color" id="input-dot3-color" value="#ff4a4a">
+                </div>
+            </div>
+
+            <div class="color-picker-grid" style="margin-top: 10px;">
+                <div class="input-group">
+                    <label>세계관 박스 색상</label>
+                    <input type="color" id="input-box-bg" value="#000000">
+                </div>
+                <div class="input-group">
+                    <label>세계관 제목 색상</label>
+                    <input type="color" id="input-box-title-color" value="#ff4a4a">
+                </div>
+                <div class="input-group">
+                    <label>세계관 본문 색상</label>
+                    <input type="color" id="input-box-text-color" value="#dddddd">
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-top: 15px;">
+                <label>글꼴(폰트)</label>
                 <select id="input-font">
                     <option value="'Noto Sans KR', sans-serif">Noto Sans</option>
                     <option value="'Noto Serif KR', serif">Noto Serif</option>
@@ -27,9 +57,9 @@
                 </select>
             </div>
 
-            <h3>[상단 타이틀 & 가로 배너]</h3>
+            <h3>[상단]</h3>
             <div class="input-group">
-                <label>페어명 (메인 타이틀)</label>
+                <label>페어명 (메인)</label>
                 <input type="text" id="in-pair-name" placeholder="예: 페어명 (PAIR NAME)" value="">
             </div>
             <div class="input-group">
@@ -37,75 +67,78 @@
                 <input type="file" id="in-top-banner" accept="image/*">
             </div>
 
-            <h3>[캐릭터 1 (좌)]</h3>
+            <h3>[캐릭터 1]</h3>
             <div class="input-group"><label>이름</label><input type="text" id="in-ch1-name" placeholder="이름 입력" value=""></div>
             <div class="input-group"><label>나이</label><input type="text" id="in-ch1-age" placeholder="나이" value=""></div>
             <div class="input-group"><label>성별</label><input type="text" id="in-ch1-gender" placeholder="성별" value=""></div>
-            <div class="input-group"><label>태그/설명</label><textarea id="in-ch1-desc" rows="3" placeholder="#해시태그 입력&#10;설명을 적어주세요."></textarea></div>
+            <div class="input-group"><label>태그/설명</label><textarea id="in-ch1-desc" rows="3" placeholder="#해시태그로 키워드 구분&#10;설명을 적어주세요."></textarea></div>
             <div class="input-group"><label>프로필 이미지</label><input type="file" id="in-ch1-img" accept="image/*"></div>
 
-            <h3>[캐릭터 2 (우)]</h3>
+            <h3>[캐릭터 2]</h3>
             <div class="input-group"><label>이름</label><input type="text" id="in-ch2-name" placeholder="이름 입력" value=""></div>
             <div class="input-group"><label>나이</label><input type="text" id="in-ch2-age" placeholder="나이" value=""></div>
             <div class="input-group"><label>성별</label><input type="text" id="in-ch2-gender" placeholder="성별" value=""></div>
-            <div class="input-group"><label>태그/설명</label><textarea id="in-ch2-desc" rows="3" placeholder="#해시태그 입력&#10;설명을 적어주세요."></textarea></div>
+            <div class="input-group"><label>태그/설명</label><textarea id="in-ch2-desc" rows="3" placeholder="#해시태그로 키워드 구분&#10;설명을 적어주세요."></textarea></div>
             <div class="input-group"><label>프로필 이미지</label><input type="file" id="in-ch2-img" accept="image/*"></div>
 
-            <h3>[중앙 관계성 & 동그란 원형 이미지]</h3>
+            <h3>[중앙 관계성]</h3>
             <div class="input-group"><label>상단 화살표 텍스트</label><input type="text" id="in-rel-top" placeholder="A가 B에게 느끼는 감정" value=""></div>
             <div class="input-group"><label>하단 화살표 텍스트</label><input type="text" id="in-rel-bot" placeholder="B가 A에게 느끼는 감정" value=""></div>
-            <div class="input-group"><label>좌측 동그란 원 이미지 (캐릭터 1 관련)</label><input type="file" id="in-circle1-img" accept="image/*"></div>
-            <div class="input-group"><label>우측 동그란 원 이미지 (캐릭터 2 관련)</label><input type="file" id="in-circle2-img" accept="image/*"></div>
+
+            <h3>[하단 원형 크롭 & 호칭 관계]</h3>
+            <div class="input-group"><label>좌측 동그란 원 이미지</label><input type="file" id="in-circle1-img" accept="image/*"></div>
+            <div class="input-group"><label>우측 동그란 원 이미지</label><input type="file" id="in-circle2-img" accept="image/*"></div>
+            <div class="input-group"><label>원형 상단 호칭 (A → B)</label><input type="text" id="in-circle-rel-top" placeholder="예: 한영아 / 아줌마는" value=""></div>
+            <div class="input-group"><label>원형 하단 호칭 (B → A)</label><input type="text" id="in-circle-rel-bot" placeholder="예: 손님 / 저는" value=""></div>
 
             <h3>[좌측 하단 메인 박스 & 대형 이미지]</h3>
             <div class="input-group"><label>박스 제목</label><input type="text" id="in-main-title" placeholder="세계관 키워드" value=""></div>
-            <div class="input-group"><label>박스 본문</label><textarea id="in-main-content" rows="4" placeholder="세계관 요약 및 배경 등 자유롭게 적어주세요."></textarea></div>
-            <div class="input-group"><label>맨 밑 큰 일러스트 이미지</label><input type="file" id="in-bottom-large-img" accept="image/*"></div>
+            <div class="input-group"><label>박스 본문</label><textarea id="in-main-content" rows="4" placeholder="세계관 요약 및 배경 등"></textarea></div>
+            <div class="input-group"><label>페어 이미지</label><input type="file" id="in-bottom-large-img" accept="image/*"></div>
 
             <h3>[우측 서사 구역]</h3>
             <div class="input-group"><label>서사1 제목</label><input type="text" id="in-story1-title" placeholder="첫 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사1 내용</label><textarea id="in-story1-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+            <div class="input-group"><label>서사1 내용</label><textarea id="in-story1-content" rows="2" placeholder="상세 내용"></textarea></div>
             
             <div class="input-group"><label>서사2 제목</label><input type="text" id="in-story2-title" placeholder="두 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사2 내용</label><textarea id="in-story2-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+            <div class="input-group"><label>서사2 내용</label><textarea id="in-story2-content" rows="2" placeholder="상세 내용"></textarea></div>
 
             <div class="input-group"><label>서사3 제목</label><input type="text" id="in-story3-title" placeholder="세 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사3 내용</label><textarea id="in-story3-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+            <div class="input-group"><label>서사3 내용</label><textarea id="in-story3-content" rows="2" placeholder="상세 내용"></textarea></div>
 
             <div class="input-group"><label>서사4 제목</label><input type="text" id="in-story4-title" placeholder="네 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사4 내용</label><textarea id="in-story4-content" rows="2" placeholder="상세 내용을 적어주세요."></textarea></div>
+            <div class="input-group"><label>서사4 내용</label><textarea id="in-story4-content" rows="2" placeholder="상세 내용"></textarea></div>
 
-            <button id="btn-save">📸 이미지 저장하기</button>
+            <button id="btn-save">이미지로 저장하기</button>
         </div>
 
         <div class="preview-section">
-            <h2>👁️ 실시간 미리보기</h2>
+            <h2>미리보기</h2>
             
             <div id="capture-area" class="main-layout">
                 
                 <div class="card-top-bar">
                     <div class="top-dots">
-                        <span class="dot color1"></span>
-                        <span class="dot color2"></span>
-                        <span class="dot color3"></span>
+                        <span class="dot" id="out-dot1"></span>
+                        <span class="dot" id="out-dot2"></span>
+                        <span class="dot" id="out-dot3"></span>
                     </div>
                     <div id="out-pair-name" class="pair-title">PAIR TITLE</div>
                     <div class="top-spacer"></div>
                 </div>
 
                 <div class="top-banner-slot" id="out-top-banner">
-                    <span class="img-guide">상단 배너 이미지를 첨부하세요</span>
+                    <span class="img-guide">페어 이미지</span>
                 </div>
 
                 <div class="profile-relation-row">
-                    <!-- 캐릭터 1 (좌) -->
                     <div class="char-card">
-                        <div class="char-header-badge">CHARACTER 01</div>
+                        <div class="char-header-badge">CHARACTER A</div>
                         <div class="char-main-box">
                             <div class="char-img-slot" id="out-ch1-img-slot"></div>
                             <div class="char-info-grid">
                                 <div class="info-top-row">
-                                    <span class="info-name" id="out-ch1-name">이름</span>
+                                    <span class="info-name class-theme-border" id="out-ch1-name">이름</span>
                                     <span class="info-badge" id="out-ch1-age">나이</span>
                                     <span class="info-badge" id="out-ch1-gender">성별</span>
                                 </div>
@@ -124,12 +157,12 @@
                     </div>
 
                     <div class="char-card">
-                        <div class="char-header-badge-right">CHARACTER 02</div>
+                        <div class="char-header-badge-right">CHARACTER B</div>
                         <div class="char-main-box">
                             <div class="char-img-slot" id="out-ch2-img-slot"></div>
                             <div class="char-info-grid">
                                 <div class="info-top-row">
-                                    <span class="info-name" id="out-ch2-name">이름</span>
+                                    <span class="info-name class-theme-border" id="out-ch2-name">이름</span>
                                     <span class="info-badge" id="out-ch2-age">나이</span>
                                     <span class="info-badge" id="out-ch2-gender">성별</span>
                                 </div>
@@ -141,19 +174,28 @@
 
                 <div class="bottom-content-grid">
                     <div class="bottom-left-zone">
-                        <div class="noir-text-box">
+                        <div class="noir-text-box" id="out-main-box">
                             <h4 id="out-main-title">TITLE</h4>
-                            <p id="out-main-content">세계관 설정이나 캐릭터들의 메인 스토리를 이곳에 채워 넣으세요.</p>
+                            <p id="out-main-content">세계관 설정 등</p>
                         </div>
                         
                         <div class="circle-crops-row">
                             <div class="circle-crop" id="out-circle1-img"></div>
-                            <div class="circle-arrows">⇆</div>
+                            
+                            <div class="circle-relation-center">
+                                <div class="circle-rel-text" id="out-circle-rel-top">호칭 1</div>
+                                <div class="circle-arrow-box">
+                                    <div class="c-arrow-top">◀━━━━━</div>
+                                    <div class="c-arrow-bottom">━━━━━▶</div>
+                                </div>
+                                <div class="circle-rel-text" id="out-circle-rel-bot">호칭 2</div>
+                            </div>
+                            
                             <div class="circle-crop" id="out-circle2-img"></div>
                         </div>
 
                         <div class="bottom-large-img-slot" id="out-bottom-large-img">
-                            <span class="img-guide">하단 대형 일러스트 이미지를 첨부하세요</span>
+                            <span class="img-guide">페어 이미지</span>
                         </div>
                     </div>
 
