@@ -108,6 +108,7 @@ h3 {
     border-radius: 4px;
 }
 
+
 .main-layout {
     width: 800px;
     background-color: #ffffff;
@@ -362,6 +363,7 @@ h3 {
     background-position: center;
 }
 
+
 .bottom-right-zone {
     flex: 1;
     display: flex;
@@ -394,15 +396,40 @@ h3 {
     color: inherit !important;
 }
 
-.story-body {
+.story-body.chat-container {
     border: 1px solid #aaa;
-    padding: 12px 15px;
+    padding: 15px;
     position: relative;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.story-body p {
-    font-size: 0.75rem;
-    color: #444;
+
+.chat-bubble {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    padding: 7px 12px;
+    border-radius: 12px;
+    max-width: 85%;
     white-space: pre-wrap;
+    display: inline-block;
+}
+
+
+.bubble-a {
+    align-self: flex-start;
+    background-color: #f0f0f0;
+    color: #333333;
+    border-top-left-radius: 2px;
+}
+
+
+.bubble-b {
+    align-self: flex-end;
+    background-color: #333333;
+    color: #ffffff;
+    border-top-right-radius: 2px;
+    text-align: left;
 }

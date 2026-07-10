@@ -47,17 +47,29 @@ const inputBadgeColor = document.getElementById('input-badge-color');
 const outCh1Badge = document.getElementById('out-ch1-badge');
 const outCh2Badge = document.getElementById('out-ch2-badge');
 
-inputBadgeABg.addEventListener('input', (e) => {
-    outCh1Badge.style.backgroundColor = e.target.value;
-});
-
-inputBadgeBBg.addEventListener('input', (e) => {
-    outCh2Badge.style.backgroundColor = e.target.value;
-});
-
+inputBadgeABg.addEventListener('input', (e) => outCh1Badge.style.backgroundColor = e.target.value);
+inputBadgeBBg.addEventListener('input', (e) => outCh2Badge.style.backgroundColor = e.target.value);
 inputBadgeColor.addEventListener('input', (e) => {
     outCh1Badge.style.color = e.target.value;
     outCh2Badge.style.color = e.target.value;
+});
+
+const inputChatABg = document.getElementById('input-chat-a-bg');
+const inputChatAColor = document.getElementById('input-chat-a-color');
+const inputChatBBg = document.getElementById('input-chat-b-bg');
+const inputChatBColor = document.getElementById('input-chat-b-color');
+
+inputChatABg.addEventListener('input', (e) => {
+    document.querySelectorAll('.bubble-a').forEach(b => b.style.backgroundColor = e.target.value);
+});
+inputChatAColor.addEventListener('input', (e) => {
+    document.querySelectorAll('.bubble-a').forEach(b => b.style.color = e.target.value);
+});
+inputChatBBg.addEventListener('input', (e) => {
+    document.querySelectorAll('.bubble-b').forEach(b => b.style.backgroundColor = e.target.value);
+});
+inputChatBColor.addEventListener('input', (e) => {
+    document.querySelectorAll('.bubble-b').forEach(b => b.style.color = e.target.value);
 });
 
 
@@ -87,14 +99,24 @@ document.getElementById('in-circle-rel-bot').addEventListener('input', (e) => do
 document.getElementById('in-main-title').addEventListener('input', (e) => document.getElementById('out-main-title').textContent = e.target.value);
 document.getElementById('in-main-content').addEventListener('input', (e) => document.getElementById('out-main-content').textContent = e.target.value);
 
-document.getElementById('in-story1-title').addEventListener('input', (e) => document.getElementById('out-story1-title').textContent = e.target.value);
-document.getElementById('in-story1-content').addEventListener('input', (e) => document.getElementById('out-story1-content').textContent = e.target.value);
-document.getElementById('in-story2-title').addEventListener('input', (e) => document.getElementById('out-story2-title').textContent = e.target.value);
-document.getElementById('in-story2-content').addEventListener('input', (e) => document.getElementById('out-story2-content').textContent = e.target.value);
-document.getElementById('in-story3-title').addEventListener('input', (e) => document.getElementById('out-story3-title').textContent = e.target.value);
-document.getElementById('in-story3-content').addEventListener('input', (e) => document.getElementById('out-story3-content').textContent = e.target.value);
-document.getElementById('in-story4-title').addEventListener('input', (e) => document.getElementById('out-story4-title').textContent = e.target.value);
-document.getElementById('in-story4-content').addEventListener('input', (e) => document.getElementById('out-story4-content').textContent = e.target.value);
+const stories = [1, 2, 3, 4];
+stories.forEach(num => {
+    document.getElementById(`in-story${num}-title`).addEventListener('input', (e) => {
+        document.getElementById(`out-story${num}-title`).textContent = e.target.value;
+    });
+
+    document.getElementById(`in-story${num}-chat-a`).addEventListener('input', (e) => {
+        const bubble = document.getElementById(`out-story${num}-chat-a`);
+        bubble.textContent = e.target.value;
+        bubble.style.display = e.target.value.trim() === "" ? "none" : "inline-block";
+    });
+
+    document.getElementById(`in-story${num}-chat-b`).addEventListener('input', (e) => {
+        const bubble = document.getElementById(`out-story${num}-chat-b`);
+        bubble.textContent = e.target.value;
+        bubble.style.display = e.target.value.trim() === "" ? "none" : "inline-block";
+    });
+});
 
 const inputFont = document.getElementById('input-font');
 const mainLayout = document.querySelector('.main-layout');

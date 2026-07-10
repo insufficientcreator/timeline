@@ -73,6 +73,27 @@
                 </div>
             </div>
 
+            <div class="color-picker-grid" style="margin-top: 10px;">
+                <div class="input-group">
+                    <label>말풍선A 배경색</label>
+                    <input type="color" id="input-chat-a-bg" value="#f0f0f0">
+                </div>
+                <div class="input-group">
+                    <label>말풍선A 글자색</label>
+                    <input type="color" id="input-chat-a-color" value="#333333">
+                </div>
+                <div class="input-group" style="grid-row: span 2;">
+                    </div>
+                <div class="input-group">
+                    <label>말풍선B 배경색</label>
+                    <input type="color" id="input-chat-b-bg" value="#333333">
+                </div>
+                <div class="input-group">
+                    <label>말풍선B 글자색</label>
+                    <input type="color" id="input-chat-b-color" value="#ffffff">
+                </div>
+            </div>
+
             <div class="input-group" style="margin-top: 15px;">
                 <label>글꼴(폰트)</label>
                 <select id="input-font">
@@ -128,16 +149,20 @@
 
             <h3>[서사 타임라인]</h3>
             <div class="input-group"><label>서사1 제목</label><input type="text" id="in-story1-title" placeholder="첫 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사1 내용</label><textarea id="in-story1-content" rows="2" placeholder="상세 내용"></textarea></div>
+            <div class="input-group"><label>A 대사 (왼쪽 말풍선)</label><textarea id="in-story1-chat-a" rows="2" placeholder="A 대사"></textarea></div>
+            <div class="input-group"><label>B 대사 (오른쪽 말풍선)</label><textarea id="in-story1-chat-b" rows="2" placeholder="B 대사"></textarea></div>
             
-            <div class="input-group"><label>서사2 제목</label><input type="text" id="in-story2-title" placeholder="두 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사2 내용</label><textarea id="in-story2-content" rows="2" placeholder="상세 내용"></textarea></div>
+            <div class="input-group" style="margin-top: 20px;"><label>서사2 제목</label><input type="text" id="in-story2-title" placeholder="두 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>A 대사</label><textarea id="in-story2-chat-a" rows="2" placeholder="A 대사"></textarea></div>
+            <div class="input-group"><label>B 대사</label><textarea id="in-story2-chat-b" rows="2" placeholder="B 대사"></textarea></div>
 
-            <div class="input-group"><label>서사3 제목</label><input type="text" id="in-story3-title" placeholder="세 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사3 내용</label><textarea id="in-story3-content" rows="2" placeholder="상세 내용"></textarea></div>
+            <div class="input-group" style="margin-top: 20px;"><label>서사3 제목</label><input type="text" id="in-story3-title" placeholder="세 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>A 대사</label><textarea id="in-story3-chat-a" rows="2" placeholder="A 대사"></textarea></div>
+            <div class="input-group"><label>B 대사</label><textarea id="in-story3-chat-b" rows="2" placeholder="B 대사"></textarea></div>
 
-            <div class="input-group"><label>서사4 제목</label><input type="text" id="in-story4-title" placeholder="네 번째 서사 제목" value=""></div>
-            <div class="input-group"><label>서사4 내용</label><textarea id="in-story4-content" rows="2" placeholder="상세 내용"></textarea></div>
+            <div class="input-group" style="margin-top: 20px;"><label>서사4 제목</label><input type="text" id="in-story4-title" placeholder="네 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>A 대사</label><textarea id="in-story4-chat-a" rows="2" placeholder="A 대사"></textarea></div>
+            <div class="input-group"><label>B 대사</label><textarea id="in-story4-chat-b" rows="2" placeholder="B 대사"></textarea></div>
 
             <button id="btn-save">이미지로 저장하기</button>
         </div>
@@ -234,25 +259,37 @@
                             <div class="story-header-wrap">
                                 <div class="story-header class-story-header" id="out-story1-title">서사 제목 1</div>
                             </div>
-                            <div class="story-body"><p id="out-story1-content">서사 세부 내용</p></div>
+                            <div class="story-body chat-container">
+                                <div class="chat-bubble bubble-a" id="out-story1-chat-a">대화 내용 A</div>
+                                <div class="chat-bubble bubble-b" id="out-story1-chat-b">대화 내용 B</div>
+                            </div>
                         </div>
                         <div class="story-item">
                             <div class="story-header-wrap">
                                 <div class="story-header class-story-header" id="out-story2-title">서사 제목 2</div>
                             </div>
-                            <div class="story-body"><p id="out-story2-content">서사 세부 내용</p></div>
+                            <div class="story-body chat-container">
+                                <div class="chat-bubble bubble-a" id="out-story2-chat-a">대화 내용 A</div>
+                                <div class="chat-bubble bubble-b" id="out-story2-chat-b">대화 내용 B</div>
+                            </div>
                         </div>
                         <div class="story-item">
                             <div class="story-header-wrap">
                                 <div class="story-header class-story-header" id="out-story3-title">서사 제목 3</div>
                             </div>
-                            <div class="story-body"><p id="out-story3-content">서사 세부 내용</p></div>
+                            <div class="story-body chat-container">
+                                <div class="chat-bubble bubble-a" id="out-story3-chat-a">대화 내용 A</div>
+                                <div class="chat-bubble bubble-b" id="out-story3-chat-b">대화 내용 B</div>
+                            </div>
                         </div>
                         <div class="story-item">
                             <div class="story-header-wrap">
                                 <div class="story-header class-story-header" id="out-story4-title">서사 제목 4</div>
                             </div>
-                            <div class="story-body"><p id="out-story4-content">서사 세부 내용</p></div>
+                            <div class="story-body chat-container">
+                                <div class="chat-bubble bubble-a" id="out-story4-chat-a">대화 내용 A</div>
+                                <div class="chat-bubble bubble-b" id="out-story4-chat-b">대화 내용 B</div>
+                            </div>
                         </div>
                     </div>
                 </div>
