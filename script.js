@@ -72,7 +72,6 @@ inputChatBColor.addEventListener('input', (e) => {
     document.querySelectorAll('.bubble-b').forEach(b => b.style.color = e.target.value);
 });
 
-
 document.getElementById('in-pair-name').addEventListener('input', (e) => {
     document.getElementById('out-pair-name').textContent = e.target.value;
 });
@@ -104,13 +103,16 @@ stories.forEach(num => {
     document.getElementById(`in-story${num}-title`).addEventListener('input', (e) => {
         document.getElementById(`out-story${num}-title`).textContent = e.target.value;
     });
-
+    document.getElementById(`in-story${num}-content`).addEventListener('input', (e) => {
+        const descText = document.getElementById(`out-story${num}-content`);
+        descText.textContent = e.target.value;
+        descText.style.display = e.target.value.trim() === "" ? "none" : "block";
+    });
     document.getElementById(`in-story${num}-chat-a`).addEventListener('input', (e) => {
         const bubble = document.getElementById(`out-story${num}-chat-a`);
         bubble.textContent = e.target.value;
         bubble.style.display = e.target.value.trim() === "" ? "none" : "inline-block";
     });
-
     document.getElementById(`in-story${num}-chat-b`).addEventListener('input', (e) => {
         const bubble = document.getElementById(`out-story${num}-chat-b`);
         bubble.textContent = e.target.value;
@@ -152,6 +154,12 @@ const inputBannerY = document.getElementById('input-banner-y');
 const outTopBanner = document.getElementById('out-top-banner');
 inputBannerY.addEventListener('input', (e) => {
     outTopBanner.style.backgroundPosition = `center ${e.target.value}%`;
+});
+
+const inputLargeImgY = document.getElementById('input-large-img-y');
+const outBottomLargeImg = document.getElementById('out-bottom-large-img');
+inputLargeImgY.addEventListener('input', (e) => {
+    outBottomLargeImg.style.backgroundPosition = `center ${e.target.value}%`;
 });
 
 document.getElementById('btn-save').addEventListener('click', () => {

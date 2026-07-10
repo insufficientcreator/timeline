@@ -108,7 +108,6 @@ h3 {
     border-radius: 4px;
 }
 
-
 .main-layout {
     width: 800px;
     background-color: #ffffff;
@@ -353,16 +352,15 @@ h3 {
 
 .bottom-large-img-slot {
     width: 100%;
-    height: 200px;
+    height: 380px; 
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
-    background-position: center;
+    background-position: center 50%; 
 }
-
 
 .bottom-right-zone {
     flex: 1;
@@ -406,7 +404,6 @@ h3 {
     gap: 10px;
 }
 
-
 .chat-bubble {
     font-size: 0.72rem;
     line-height: 1.4;
@@ -417,14 +414,12 @@ h3 {
     display: inline-block;
 }
 
-
 .bubble-a {
     align-self: flex-start;
     background-color: #f0f0f0;
     color: #333333;
     border-top-left-radius: 2px;
 }
-
 
 .bubble-b {
     align-self: flex-end;

@@ -83,7 +83,7 @@
                     <input type="color" id="input-chat-a-color" value="#333333">
                 </div>
                 <div class="input-group" style="grid-row: span 2;">
-                    </div>
+                </div>
                 <div class="input-group">
                     <label>말풍선B 배경색</label>
                     <input type="color" id="input-chat-b-bg" value="#333333">
@@ -146,21 +146,29 @@
             <div class="input-group"><label>박스 제목</label><input type="text" id="in-main-title" placeholder="세계관 키워드" value=""></div>
             <div class="input-group"><label>박스 본문</label><textarea id="in-main-content" rows="4" placeholder="세계관 요약 및 배경 등"></textarea></div>
             <div class="input-group"><label>페어 이미지</label><input type="file" id="in-bottom-large-img" accept="image/*"></div>
+            <div class="input-group" style="margin-top: 5px;">
+                <label>페어 이미지 상하 위치 조절 (0% ~ 100%)</label>
+                <input type="range" id="input-large-img-y" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
+            </div>
 
             <h3>[서사 타임라인]</h3>
             <div class="input-group"><label>서사1 제목</label><input type="text" id="in-story1-title" placeholder="첫 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사1 본문 설명 (줄글)</label><textarea id="in-story1-content" rows="2" placeholder="상세 서사 내용을 줄글로 적어보세요."></textarea></div>
             <div class="input-group"><label>A 대사 (왼쪽 말풍선)</label><textarea id="in-story1-chat-a" rows="2" placeholder="A 대사"></textarea></div>
             <div class="input-group"><label>B 대사 (오른쪽 말풍선)</label><textarea id="in-story1-chat-b" rows="2" placeholder="B 대사"></textarea></div>
             
             <div class="input-group" style="margin-top: 20px;"><label>서사2 제목</label><input type="text" id="in-story2-title" placeholder="두 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사2 본문 설명 (줄글)</label><textarea id="in-story2-content" rows="2" placeholder="상세 서사 내용"></textarea></div>
             <div class="input-group"><label>A 대사</label><textarea id="in-story2-chat-a" rows="2" placeholder="A 대사"></textarea></div>
             <div class="input-group"><label>B 대사</label><textarea id="in-story2-chat-b" rows="2" placeholder="B 대사"></textarea></div>
 
             <div class="input-group" style="margin-top: 20px;"><label>서사3 제목</label><input type="text" id="in-story3-title" placeholder="세 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사3 본문 설명 (줄글)</label><textarea id="in-story3-content" rows="2" placeholder="상세 서사 내용"></textarea></div>
             <div class="input-group"><label>A 대사</label><textarea id="in-story3-chat-a" rows="2" placeholder="A 대사"></textarea></div>
             <div class="input-group"><label>B 대사</label><textarea id="in-story3-chat-b" rows="2" placeholder="B 대사"></textarea></div>
 
             <div class="input-group" style="margin-top: 20px;"><label>서사4 제목</label><input type="text" id="in-story4-title" placeholder="네 번째 서사 제목" value=""></div>
+            <div class="input-group"><label>서사4 본문 설명 (줄글)</label><textarea id="in-story4-content" rows="2" placeholder="상세 서사 내용"></textarea></div>
             <div class="input-group"><label>A 대사</label><textarea id="in-story4-chat-a" rows="2" placeholder="A 대사"></textarea></div>
             <div class="input-group"><label>B 대사</label><textarea id="in-story4-chat-b" rows="2" placeholder="B 대사"></textarea></div>
 
@@ -260,6 +268,7 @@
                                 <div class="story-header class-story-header" id="out-story1-title">서사 제목 1</div>
                             </div>
                             <div class="story-body chat-container">
+                                <p class="story-desc-text" id="out-story1-content" style="font-size: 0.75rem; color: #444; margin-bottom: 8px; white-space: pre-wrap; display: none;">서사 세부 내용</p>
                                 <div class="chat-bubble bubble-a" id="out-story1-chat-a">대화 내용 A</div>
                                 <div class="chat-bubble bubble-b" id="out-story1-chat-b">대화 내용 B</div>
                             </div>
@@ -269,6 +278,7 @@
                                 <div class="story-header class-story-header" id="out-story2-title">서사 제목 2</div>
                             </div>
                             <div class="story-body chat-container">
+                                <p class="story-desc-text" id="out-story2-content" style="font-size: 0.75rem; color: #444; margin-bottom: 8px; white-space: pre-wrap; display: none;">서사 세부 내용</p>
                                 <div class="chat-bubble bubble-a" id="out-story2-chat-a">대화 내용 A</div>
                                 <div class="chat-bubble bubble-b" id="out-story2-chat-b">대화 내용 B</div>
                             </div>
@@ -278,6 +288,7 @@
                                 <div class="story-header class-story-header" id="out-story3-title">서사 제목 3</div>
                             </div>
                             <div class="story-body chat-container">
+                                <p class="story-desc-text" id="out-story3-content" style="font-size: 0.75rem; color: #444; margin-bottom: 8px; white-space: pre-wrap; display: none;">서사 세부 내용</p>
                                 <div class="chat-bubble bubble-a" id="out-story3-chat-a">대화 내용 A</div>
                                 <div class="chat-bubble bubble-b" id="out-story3-chat-b">대화 내용 B</div>
                             </div>
@@ -287,6 +298,7 @@
                                 <div class="story-header class-story-header" id="out-story4-title">서사 제목 4</div>
                             </div>
                             <div class="story-body chat-container">
+                                <p class="story-desc-text" id="out-story4-content" style="font-size: 0.75rem; color: #444; margin-bottom: 8px; white-space: pre-wrap; display: none;">서사 세부 내용</p>
                                 <div class="chat-bubble bubble-a" id="out-story4-chat-a">대화 내용 A</div>
                                 <div class="chat-bubble bubble-b" id="out-story4-chat-b">대화 내용 B</div>
                             </div>
