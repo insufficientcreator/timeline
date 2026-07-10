@@ -74,7 +74,7 @@ inputChatBColor.addEventListener('input', (e) => {
 
 
 document.getElementById('in-pair-name').addEventListener('input', (e) => {
-    document.getElementById('out-pair-name').textContent = e.target.value;
+    document.getElementById('out-pair-name').textContent = e.target.value || "PAIR NAME";
 });
 
 document.getElementById('in-ch1-badge').addEventListener('input', (e) => {
