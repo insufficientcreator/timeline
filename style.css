@@ -91,6 +91,7 @@ h3 {
     border-radius: 4px;
 }
 
+
 .main-layout {
     width: 800px;
     background-color: #ffffff;
@@ -291,9 +292,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
-    background: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #e3e3e3;
+    padding: 10px 0; 
 }
 
 .circle-crop {
