@@ -156,10 +156,25 @@ inputBannerY.addEventListener('input', (e) => {
     outTopBanner.style.backgroundPosition = `center ${e.target.value}%`;
 });
 
+const inputLargeImgX = document.getElementById('input-large-img-x');
 const inputLargeImgY = document.getElementById('input-large-img-y');
 const outBottomLargeImg = document.getElementById('out-bottom-large-img');
+
+let imgPosX = 50;
+let imgPosY = 50;
+
+function updateLargeImgPosition() {
+    outBottomLargeImg.style.backgroundPosition = `${imgPosX}% ${imgPosY}%`;
+}
+
+inputLargeImgX.addEventListener('input', (e) => {
+    imgPosX = e.target.value;
+    updateLargeImgPosition();
+});
+
 inputLargeImgY.addEventListener('input', (e) => {
-    outBottomLargeImg.style.backgroundPosition = `center ${e.target.value}%`;
+    imgPosY = e.target.value;
+    updateLargeImgPosition();
 });
 
 document.getElementById('btn-save').addEventListener('click', () => {
