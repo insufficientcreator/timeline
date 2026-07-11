@@ -414,6 +414,8 @@ h3 {
     margin-bottom: 8px;
     white-space: pre-wrap;
     text-align: justify;
+    text-justify: inter-character;
+    word-break: break-all;
 }
 
 .chat-bubble {
