@@ -279,6 +279,7 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: relative; 
 }
 
 .noir-text-box {
@@ -438,4 +439,40 @@ h3 {
     color: #ffffff;
     border-top-right-radius: 2px;
     text-align: left;
+}
+
+.sub-horizontal-box {
+    width: 100%;
+    height: 80px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.sub-box-label {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: 0.72rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.sd-sticker-wrap {
+    position: absolute;
+    bottom: -15px;
+    left: 140px;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 5;
+}
+.sd-sticker-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
 }
