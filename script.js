@@ -185,9 +185,69 @@ inputLargeImgY.addEventListener('input', (e) => {
     updateLargeImgPosition();
 });
 
+
+[1, 2, 3].forEach(num => {
+    document.getElementById(`in-sub${num}-text`).addEventListener('input', (e) => {
+        document.getElementById(`out-sub${num}-label`).textContent = e.target.value;
+    });
+    document.getElementById(`input-sub${num}-color`).addEventListener('input', (e) => {
+        document.getElementById(`out-sub${num}-label`).style.color = e.target.value;
+    });
+    document.getElementById(`in-sub${num}-img`).addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById(`out-sub${num}-box`).style.backgroundImage = `url('${event.target.result}')`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+const inSdImg = document.getElementById('in-sd-img');
+const outSdImgElement = document.getElementById('out-sd-img-element');
+const outSdWrap = document.getElementById('out-sd-wrap');
+
+const inSdZoom = document.getElementById('input-sd-zoom');
+const inSdX = document.getElementById('input-sd-x');
+const inSdY = document.getElementById('input-sd-y');
+const inSdRotate = document.getElementById('input-sd-rotate');
+const inSdFlip = document.getElementById('input-sd-flip');
+
+let sdZoom = 1; let sdX = 140; let sdY = -15; let sdRotate = 0; let sdFlip = 1;
+
+function updateSdStickerTransform() {
+    outSdWrap.style.left = sdX + 'px';
+    outSdWrap.style.bottom = sdY + 'px';
+    outSdWrap.style.width = (150 * sdZoom) + 'px';
+    outSdWrap.style.height = (150 * sdZoom) + 'px';
+    outSdImgElement.style.transform = `scaleX(${sdFlip}) rotate(${sdRotate}deg)`;
+}
+
+inSdImg.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            outSdImgElement.src = event.target.result;
+            outSdImgElement.style.display = 'block';
+            updateSdStickerTransform();
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+inSdZoom.addEventListener('input', (e) => { sdZoom = e.target.value / 100; updateSdStickerTransform(); });
+inSdX.addEventListener('input', (e) => { sdX = parseInt(e.target.value); updateSdStickerTransform(); });
+inSdY.addEventListener('input', (e) => { sdY = parseInt(e.target.value); updateSdStickerTransform(); });
+inSdRotate.addEventListener('input', (e) => { sdRotate = e.target.value; updateSdStickerTransform(); });
+inSdFlip.addEventListener('change', (e) => { sdFlip = e.target.checked ? -1 : 1; updateSdStickerTransform(); });
+
+
 document.getElementById('btn-save').addEventListener('click', () => {
     const area = document.getElementById('capture-area');
-    html2canvas(area, { scale: 2 }).then(canvas => {
+    html2canvas(area, { scale: 2, useCORS: true }).then(canvas => {
         const link = document.createElement('a');
         link.download = 'pair_timeline.png';
         link.href = canvas.toDataURL('image/png');
