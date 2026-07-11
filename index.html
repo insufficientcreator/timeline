@@ -149,13 +149,38 @@
             <div class="input-group"><label>박스 본문</label><textarea id="in-main-content" rows="4" placeholder="세계관 요약 및 배경 등"></textarea></div>
             <div class="input-group"><label>페어 이미지</label><input type="file" id="in-bottom-large-img" accept="image/*"></div>
             <div class="input-group" style="margin-top: 5px;">
-                <label>페어 이미지 상하 위치 조절 (0% ~ 100%)</label>
+                <label>페어 이미지 상하 위치 조절</label>
                 <input type="range" id="input-large-img-y" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
             </div>
             <div class="input-group" style="margin-top: 5px;">
-                <label>페어 이미지 좌우 위치 조절 (0% ~ 100%)</label>
+                <label>페어 이미지 좌우 위치 조절</label>
                 <input type="range" id="input-large-img-x" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
             </div>
+
+            <h3>[핵심 장소]</h3>
+            <div style="border: 1px dashed #555; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+                <div class="input-group"><label>박스1 좌측상단 글씨</label><input type="text" id="in-sub1-text" value="장소 1"></div>
+                <div class="input-group"><label>박스1 글씨 색상</label><input type="color" id="input-sub1-color" value="#000000"></div>
+                <div class="input-group"><label>박스1 이미지 첨부</label><input type="file" id="in-sub1-img" accept="image/*"></div>
+            </div>
+            <div style="border: 1px dashed #555; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+                <div class="input-group"><label>박스2 좌측상단 글씨</label><input type="text" id="in-sub2-text" value="장소 2"></div>
+                <div class="input-group"><label>박스2 글씨 색상</label><input type="color" id="input-sub2-color" value="#000000"></div>
+                <div class="input-group"><label>박스2 이미지 첨부</label><input type="file" id="in-sub2-img" accept="image/*"></div>
+            </div>
+            <div style="border: 1px dashed #555; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+                <div class="input-group"><label>박스3 좌측상단 글씨</label><input type="text" id="in-sub3-text" value="장소 3"></div>
+                <div class="input-group"><label>박스3 글씨 색상</label><input type="color" id="input-sub3-color" value="#000000"></div>
+                <div class="input-group"><label>박스3 이미지 첨부</label><input type="file" id="in-sub3-img" accept="image/*"></div>
+            </div>
+
+            <h3>[하단 SD 이미지 설정]</h3>
+            <div class="input-group"><label>SD 투명 이미지 업로드</label><input type="file" id="in-sd-img" accept="image/*"></div>
+            <div class="input-group"><label>SD 크기 조절</label><input type="range" id="input-sd-zoom" min="30" max="250" value="100"></div>
+            <div class="input-group"><label>SD 좌우 위치 (X)</label><input type="range" id="input-sd-x" min="-100" max="350" value="140"></div>
+            <div class="input-group"><label>SD 상하 위치 (Y)</label><input type="range" id="input-sd-y" min="-200" max="200" value="-15"></div>
+            <div class="input-group"><label>SD 회전 각도</label><input type="range" id="input-sd-rotate" min="-180" max="180" value="0"></div>
+            <div class="input-group" style="display:flex; align-items:center; gap:10px;"><label style="margin:0;">SD 좌우 반전</label><input type="checkbox" id="input-sd-flip" style="width:20px; height:20px;"></div>
 
             <h3>[서사 타임라인]</h3>
             <div class="input-group"><label>서사1 제목</label><input type="text" id="in-story1-title" placeholder="첫 번째 서사 제목" value=""></div>
@@ -248,6 +273,10 @@
                             <p id="out-main-content">세계관 설정 등</p>
                         </div>
                         
+                        <div class="sub-horizontal-box" id="out-sub1-box"><span class="sub-box-label" id="out-sub1-label">장소 1</span></div>
+                        <div class="sub-horizontal-box" id="out-sub2-box"><span class="sub-box-label" id="out-sub2-label">장소 2</span></div>
+                        <div class="sub-horizontal-box" id="out-sub3-box"><span class="sub-box-label" id="out-sub3-label">장소 3</span></div>
+                        
                         <div class="circle-crops-row">
                             <div class="circle-crop" id="out-circle1-img"></div>
                             
@@ -265,6 +294,10 @@
 
                         <div class="bottom-large-img-slot" id="out-bottom-large-img">
                             <span class="img-guide">페어 이미지</span>
+                        </div>
+
+                        <div class="sd-sticker-wrap" id="out-sd-wrap">
+                            <img id="out-sd-img-element" src="" alt="SD 스티커">
                         </div>
                     </div>
 
@@ -317,5 +350,6 @@
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
